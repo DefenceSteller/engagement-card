@@ -44,6 +44,19 @@
       margin: 40px 0;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     }
+    /* 🔥 Used ONLY during download */
+.capture-mode * {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* Remove negative spacing ONLY during capture */
+.capture-mode .fix-spacing {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
   </style>
 </head>
 <body class="flex items-center justify-center min-h-screen py-10">
@@ -108,7 +121,7 @@
 
         <!-- Couple Image - reduced margin-bottom to close gap with text below -->
         <img src="public/images/B&Gnew.png" crossorigin="anonymous" alt="Couple"
-     class="w-[180px] h-[100px] object-cover object-center -mt-8 -mb-4 mx-auto animate-fadeInUp delay-2">
+     class="w-[180px] h-[100px] object-cover object-center -mt-8 -mb-4 mx-auto animate-fadeInUp delay-2 fix-spacing">
 
         <!-- Content now sits directly below the couple image with minimal spacing -->
         <p class="text-gray-800 georgia mt-0 mb-4 animate-fadeInUp delay-2">
@@ -116,7 +129,7 @@
         </p>
 
         <h1 class="text-4xl mb-2 animate-fadeInUp delay-3 great-vibes" style="color:#800000;">Malaika Shoaib</h1>
-        <p class="georgia text-gray-700 -mt-4 mb-2 animate-fadeInUp delay-3">with</p>
+        <p class="georgia text-gray-700 -mt-4 mb-2 animate-fadeInUp delay-3 fix-spacing">with</p>
         <h1 class="text-4xl great-vibes mb-2 animate-fadeInUp delay-4" style="color:#800000;">Shaheer Bin Naeem</h1>
 
         <div class="flex flex-col items-center georgia text-gray-800 text-center space-y-1 animate-fadeInUp delay-4">
@@ -134,7 +147,7 @@
             <span class="flex-grow border-t border-gray-400"></span>
           </div>
         <div class="mt-2">
-  <div class="text-lg font-semibold -mt-4">At Events Lawn</div>
+  <div class="text-lg font-semibold -mt-4 fix-spacing">At Events Lawn</div>
   <div class="text-[12px] sm:text-sm md:text-base whitespace-nowrap">
     J-75, Block-6, Near Ambala Bakery, PECHS, Karachi
   </div>
