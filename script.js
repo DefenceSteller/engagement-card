@@ -78,13 +78,12 @@ const namePopup = document.getElementById("namePopup");
       const card = document.getElementById("weddingCard");
       
       // Use html2canvas with better configuration for text rendering
-    const canvas = await html2canvas(card, { 
-  scale: 3, // 🔥 sharper + better layout stability
+   const canvas = await html2canvas(card, { 
+  scale: 3,
   useCORS: true,
   backgroundColor: null,
   logging: false,
 
-  // ✅ Force exact dimensions
   width: card.offsetWidth,
   height: card.offsetHeight,
   windowWidth: document.documentElement.scrollWidth,
@@ -98,20 +97,25 @@ const namePopup = document.getElementById("namePopup");
 
     if (clonedCard) {
 
-      // ✅ Kill animations completely
-      const animatedElements = clonedCard.querySelectorAll('*');
-      animatedElements.forEach(el => {
+      // 🔥 Fix animations + invisible content
+      const allElements = clonedCard.querySelectorAll('*');
+      allElements.forEach(el => {
         el.style.animation = 'none';
         el.style.transition = 'none';
         el.style.transform = 'none';
+        el.style.opacity = '1'; // ✅ FIX EMPTY CARD ISSUE
       });
 
-      // ✅ Fix font rendering
-      clonedCard.style.fontKerning = "normal";
-      clonedCard.style.textRendering = "optimizeLegibility";
+      // 🔥 Fix negative margins ONLY in downloaded version
+      const spacingFix = clonedCard.querySelectorAll('[class*="-mt"], [class*="-mb"]');
+      spacingFix.forEach(el => {
+        el.style.marginTop = '0px';
+        el.style.marginBottom = '0px';
+      });
 
-      // ✅ Force layout recalculation
-      clonedCard.style.display = "block";
+      // 🔥 Improve font rendering
+      clonedCard.style.textRendering = "optimizeLegibility";
+      clonedCard.style.fontKerning = "normal";
     }
   }
 });

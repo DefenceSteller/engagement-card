@@ -100,76 +100,53 @@
     <div id="weddingCard" class="wedding-card relative w-[500px] h-[670px] bg-white rounded-xl overflow-hidden z-20">
       <img src="public/images/cardbg.png" crossorigin="anonymous" alt="Card BG" class="absolute inset-0 w-full h-full object-fill opacity-95 z-0">
           
+      <!-- Adjusted spacing: removed gap between couple image and following content -->
       <div class="relative z-10 flex flex-col items-center text-center px-6 py-6">
         
         <!-- Bismillah -->
-        <h2 class="text-2xl georgia mb-3 animate-fadeInUp delay-1">
-          بسم الله الرحمن الرحيم
-        </h2>
+        <h2 class="text-2xl georgia mb-3 animate-fadeInUp delay-1">بسم الله الرحمن الرحيم</h2>
 
-        <!-- Couple Image (FIXED spacing) -->
+        <!-- Couple Image - reduced margin-bottom to close gap with text below -->
         <img src="public/images/B&Gnew.png" crossorigin="anonymous" alt="Couple"
-             class="w-[180px] h-[100px] object-cover object-center mt-2 mb-1 mx-auto animate-fadeInUp delay-2">
+     class="w-[180px] h-[100px] object-cover object-center -mt-8 -mb-4 mx-auto animate-fadeInUp delay-2">
 
-        <!-- Invitation Text -->
-        <p class="text-gray-800 georgia mb-4 animate-fadeInUp delay-2">
-          Mr. &amp; Mrs. Shoaib Rais<br>
-          cordially invite you to the engagement ceremony of their beloved daughter
+        <!-- Content now sits directly below the couple image with minimal spacing -->
+        <p class="text-gray-800 georgia mt-0 mb-4 animate-fadeInUp delay-2">
+          Mr. &amp; Mrs. Shoaib Rais<br>cordially invite you to the engagement ceremony of their beloved daughter
         </p>
 
-        <!-- Names -->
-        <h1 class="text-4xl mb-2 animate-fadeInUp delay-3 great-vibes" style="color:#800000;">
-          Malaika Shoaib
-        </h1>
+        <h1 class="text-4xl mb-2 animate-fadeInUp delay-3 great-vibes" style="color:#800000;">Malaika Shoaib</h1>
+        <p class="georgia text-gray-700 -mt-4 mb-2 animate-fadeInUp delay-3">with</p>
+        <h1 class="text-4xl great-vibes mb-2 animate-fadeInUp delay-4" style="color:#800000;">Shaheer Bin Naeem</h1>
 
-        <p class="georgia text-gray-700 mb-1 animate-fadeInUp delay-3">
-          with
-        </p>
-
-        <h1 class="text-4xl great-vibes mb-2 animate-fadeInUp delay-4" style="color:#800000;">
-          Shaheer Bin Naeem
-        </h1>
-
-        <!-- Date -->
         <div class="flex flex-col items-center georgia text-gray-800 text-center space-y-1 animate-fadeInUp delay-4">
-          <div class="flex flex-col items-center">
+          <div class="flex flex-col items-center ">
             <div class="text-2xl">Saturday</div>
             <div class="text-base font-semibold">May | 23 | 9:30pm</div>
             <div class="text-xl font-medium">2026</div>
           </div>
         </div>  
 
-        <!-- Venue Section (FIXED structure + alignment) -->
-        <div class="flex flex-col items-center mt-2 georgia text-gray-800 text-center space-y-1 animate-fadeInUp delay-5">
-
-          <!-- Top Divider -->
+        <div class="flex flex-col items-center mt-1 georgia text-gray-800 text-center space-y-1 animate-fadeInUp delay-5">
           <div class="flex items-center w-full justify-center text-gray-500">
             <span class="flex-grow border-t border-gray-400"></span>
             <span class="mx-2 text-xl">✦</span>
             <span class="flex-grow border-t border-gray-400"></span>
           </div>
-
-          <!-- Venue Text -->
-          <div>
-            <div class="text-lg font-semibold mt-1">At Events Lawn</div>
-            <div class="text-[12px] sm:text-sm md:text-base whitespace-nowrap">
-              J-75, Block-6, Near Ambala Bakery, PECHS, Karachi
-            </div>
-          </div>
-
-          <!-- Bottom Divider -->
-          <div class="flex items-center w-full justify-center text-gray-500">
-            <span class="flex-grow border-t border-gray-400"></span>
-            <span class="mx-2 text-xl">✦</span>
-            <span class="flex-grow border-t border-gray-400"></span>
-          </div>
-
+        <div class="mt-2">
+  <div class="text-lg font-semibold -mt-4">At Events Lawn</div>
+  <div class="text-[12px] sm:text-sm md:text-base whitespace-nowrap">
+    J-75, Block-6, Near Ambala Bakery, PECHS, Karachi
+  </div>
+  <div class="flex items-center w-full justify-center text-gray-500 "> <span class="flex-grow border-t border-gray-400"></span> <span class="mx-2 text-xl">✦</span> <span class="flex-grow border-t border-gray-400"></span>
+</div>
         </div>
 
       </div>
     </div>
   </div>
 </div>
+
 <!-- Your external JavaScript file remains untouched -->
 <script src="script.js"></script>
 </body>
