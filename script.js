@@ -78,24 +78,43 @@ const namePopup = document.getElementById("namePopup");
       const card = document.getElementById("weddingCard");
       
       // Use html2canvas with better configuration for text rendering
-      const canvas = await html2canvas(card, { 
-        scale: 2, 
-        useCORS: true, 
-        backgroundColor: null,
-        logging: false,
-        onclone: function(clonedDoc) {
-          // Force all animations to complete in the cloned document
-          const clonedCard = clonedDoc.getElementById('weddingCard');
-          if (clonedCard) {
-            const animatedElements = clonedCard.querySelectorAll('.animate-fadeInUp');
-            animatedElements.forEach(el => {
-              el.style.opacity = '1';
-              el.style.transform = 'translateY(0)';
-              el.style.animation = 'none';
-            });
-          }
-        }
+    const canvas = await html2canvas(card, { 
+  scale: 3, // 🔥 sharper + better layout stability
+  useCORS: true,
+  backgroundColor: null,
+  logging: false,
+
+  // ✅ Force exact dimensions
+  width: card.offsetWidth,
+  height: card.offsetHeight,
+  windowWidth: document.documentElement.scrollWidth,
+  windowHeight: document.documentElement.scrollHeight,
+
+  scrollX: 0,
+  scrollY: 0,
+
+  onclone: function(clonedDoc) {
+    const clonedCard = clonedDoc.getElementById('weddingCard');
+
+    if (clonedCard) {
+
+      // ✅ Kill animations completely
+      const animatedElements = clonedCard.querySelectorAll('*');
+      animatedElements.forEach(el => {
+        el.style.animation = 'none';
+        el.style.transition = 'none';
+        el.style.transform = 'none';
       });
+
+      // ✅ Fix font rendering
+      clonedCard.style.fontKerning = "normal";
+      clonedCard.style.textRendering = "optimizeLegibility";
+
+      // ✅ Force layout recalculation
+      clonedCard.style.display = "block";
+    }
+  }
+});
       
       const link = document.createElement('a');
       link.download = 'wedding-invitation.png';
